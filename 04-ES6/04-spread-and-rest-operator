@@ -1,0 +1,493 @@
+# Spread and Rest Operator
+
+> 📚 Module: ES6  
+> 🎓 Class: 4/10
+
+---
+
+# 📚 What I Learned Today
+
+- Spread Operator (`...`)
+- Rest Operator (`...`)
+- Find Maximum and Minimum Value from an Array
+- Copy Array using Spread Operator
+- Copy Object using Spread Operator
+- Rest Parameter in Function
+
+---
+
+# 📌 What is Spread Operator?
+
+### Definition (English)
+
+The **Spread Operator (`...`)** expands an array or object into individual elements.
+
+### সংজ্ঞা (বাংলা)
+
+**Spread Operator (`...`)** একটি Array বা Object-এর সব Element বা Property-কে আলাদা আলাদা করে ছড়িয়ে দেয়।
+
+---
+
+# 💻 Syntax
+
+```js
+...arrayName
+```
+
+---
+
+# ✅ Course Example
+
+```js
+let numbers = [10, 20, 30, 40, 50];
+
+console.log(...numbers);
+```
+
+### Output
+
+```text
+10 20 30 40 50
+```
+
+---
+
+# 📌 Find Maximum Number
+
+### Without Spread Operator
+
+```js
+let maxNumber = Math.max(100, 200, 300, 1000, 50, 670);
+
+console.log(maxNumber);
+```
+
+### Output
+
+```text
+1000
+```
+
+---
+
+### Wrong Way
+
+```js
+let numbers = [10, 20, 30, 40, 50];
+
+console.log(Math.max(numbers));
+```
+
+### Output
+
+```text
+NaN
+```
+
+---
+
+### Correct Way
+
+```js
+let numbers = [10, 20, 30, 40, 50];
+
+let maxNumber = Math.max(...numbers);
+
+console.log(maxNumber);
+```
+
+### Output
+
+```text
+50
+```
+
+---
+
+# 📌 Find Minimum Number
+
+```js
+let numbers = [10, 20, 30, 40, 50, 2000];
+
+let minNumber = Math.min(...numbers);
+
+console.log(minNumber);
+```
+
+### Output
+
+```text
+10
+```
+
+---
+
+# 📌 Copy Array (Reference Problem)
+
+### Wrong Way
+
+```js
+let numbers = [10, 20, 30, 40, 50];
+
+let numbers2 = numbers;
+
+numbers.push(2400);
+
+console.log(numbers2);
+```
+
+### Output
+
+```text
+[10, 20, 30, 40, 50, 2400]
+```
+
+---
+
+### Correct Way
+
+```js
+let numbers = [10, 20, 30, 40, 50, 2000];
+
+let numbers2 = [...numbers, 5000, 24, 5];
+
+console.log(numbers2);
+```
+
+### Output
+
+```text
+[10, 20, 30, 40, 50, 2000, 5000, 24, 5]
+```
+
+---
+
+# 📌 Copy Object
+
+```js
+let students = {
+  name: "Utsho",
+  age: 26
+};
+
+let students2 = {
+  ...students,
+  gpa: "5.00"
+};
+
+console.log(students2);
+```
+
+### Output
+
+```text
+{
+  name: "Utsho",
+  age: 26,
+  gpa: "5.00"
+}
+```
+
+---
+
+## 📌 Rest Operator (`...`)
+
+## Definition (English)
+
+The **Rest Operator (`...`)** collects multiple values into a single array. It is mainly used in **function parameters** when the number of arguments is unknown.
+**Rest Operator (`...`)** একাধিক Argument-কে একসাথে একটি Array-তে সংরক্ষণ করে। সাধারণত Function-এর Parameter-এ ব্যবহার করা হয় যখন কতগুলো Argument আসবে আগে থেকে জানা থাকে না।
+
+---
+
+# 🤔 Why do we need Rest Operator?
+
+ধরো, তুমি এমন একটি Function বানাতে চাও যেটি ২টা, ৫টা বা ১০টা সংখ্যা যোগ করতে পারবে।
+
+### Without Rest Operator
+
+```js
+function sum(a, b, c) {
+    return a + b + c;
+}
+
+console.log(sum(10, 20, 30)); // 60
+```
+
+এখানে Function শুধু ৩টি Parameter নিতে পারে।
+
+---
+
+### Problem
+
+```js
+console.log(sum(10,20,30,40,50));
+```
+
+Output
+
+```text
+60
+```
+
+❌ 40 এবং 50 Ignore হয়ে যাবে।
+
+---
+
+# ✅ Solution: Rest Operator
+
+```js
+function sum(a, b, c, ...restNumbers) {
+    console.log(restNumbers);
+}
+
+sum(10,20,30,40,50,60,70);
+```
+
+Output
+
+```text
+[40,50,60,70]
+```
+
+---
+
+# 🔍 Step-by-Step Analysis
+
+```js
+sum(10,20,30,40,50,60,70);
+```
+
+Parameter অনুযায়ী Value যাবে—
+
+| Parameter | Value |
+|-----------|------:|
+| a | 10 |
+| b | 20 |
+| c | 30 |
+| restNumbers | [40,50,60,70] |
+
+প্রথম ৩টি Value নির্দিষ্ট Parameter-এ যাবে।
+
+বাকি সব Value একটি Array হিসেবে `restNumbers`-এ জমা হবে।
+
+---
+
+# ✅ Course Example
+
+```js
+function sum(a, b, c, ...restNumbers) {
+
+    let sum = 0;
+
+    for(let number of restNumbers){
+        sum += number;
+    }
+
+    return a + b + c + sum;
+}
+
+console.log(sum(10,20,30,40,50,60,70,80,90,100));
+```
+
+### Output
+
+```text
+550
+```
+
+---
+
+# 🧮 Calculation
+
+```text
+a = 10
+b = 20
+c = 30
+
+restNumbers =
+[
+40,
+50,
+60,
+70,
+80,
+90,
+100
+]
+```
+
+Rest Numbers এর যোগফল
+
+```text
+40+50+60+70+80+90+100
+
+= 490
+```
+
+Final Answer
+
+```text
+10 + 20 + 30 + 490
+
+= 550
+```
+
+---
+
+# ⚠️ Rules
+
+✅ Rest Parameter সবসময় **শেষ Parameter** হতে হবে।
+
+✔️ Correct
+
+```js
+function demo(a, b, ...rest){
+
+}
+```
+
+❌ Wrong
+
+```js
+function demo(...rest, a){
+
+}
+```
+
+---
+
+# 📌 Rest Operator কোথায় ব্যবহার হয়?
+
+- Function Parameters
+- Unlimited Arguments গ্রহণ করার জন্য
+- Dynamic Data Handle করার জন্য
+
+---
+
+# 🎯 Interview Question
+
+### Why is Rest Operator used?
+
+**Answer:**
+
+Rest Operator is used to collect multiple function arguments into a single array, making it easy to work with an unknown number of arguments.
+
+---
+
+# 🧠 Memory Trick
+
+```text
+Spread = Expand (ছড়িয়ে দেয়)
+
+Rest = Collect (একত্র করে)
+```
+
+---
+
+# 📊 Spread vs Rest Operator
+
+| Spread Operator | Rest Operator |
+|----------------|---------------|
+| Expands values | Collects values |
+| Used while copying arrays/objects | Used in function parameters |
+| Breaks an array into elements | Creates an array from arguments |
+| Used with `Math.max()`, `Math.min()` | Used for unlimited parameters |
+
+---
+
+# ⭐ Important Notes
+
+- Both use the same syntax (`...`).
+- Spread expands values.
+- Rest collects values.
+- Spread is useful for copying Arrays and Objects.
+- Rest is useful when a function accepts unlimited arguments.
+
+---
+
+# 🎯 Interview Questions
+
+### 1. What is Spread Operator?
+
+Spread Operator expands an Array or Object into individual values.
+
+---
+
+### 2. What is Rest Operator?
+
+Rest Operator collects multiple arguments into one array.
+
+---
+
+### 3. Why does `Math.max(numbers)` return `NaN`?
+
+Because `Math.max()` expects individual numbers, not an array.
+
+---
+
+### 4. How do you find the maximum value from an array?
+
+```js
+Math.max(...numbers)
+```
+
+---
+
+### 5. How do you copy an array?
+
+```js
+let copy = [...numbers];
+```
+
+---
+
+### 6. How do you copy an object?
+
+```js
+let copy = { ...student };
+```
+
+---
+
+# ⚠️ Common Mistakes
+
+- Writing `Math.max(numbers)` instead of `Math.max(...numbers)`.
+- Copying arrays using `=` instead of Spread Operator.
+- Confusing Spread and Rest Operator.
+
+---
+
+# 🧠 Memory Trick
+
+```text
+Spread → Expand
+
+Rest → Collect
+```
+
+---
+
+# ⚡ Quick Revision
+
+- `...numbers` → Spread Operator
+- `...rest` → Rest Operator
+- `Math.max(...numbers)`
+- `Math.min(...numbers)`
+- `[...array]` → Copy Array
+- `{...object}` → Copy Object
+- `function(...rest)` → Rest Parameter
+
+---
+
+# 🔑 Keywords
+
+- Spread Operator
+- Rest Operator
+- Array Copy
+- Object Copy
+- Math.max()
+- Math.min()
+- Rest Parameter
+- ES6
+
+<!-- do it -->
