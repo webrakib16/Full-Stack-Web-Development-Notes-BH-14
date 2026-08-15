@@ -1,41 +1,37 @@
-Module 21 - Class 04
+# 📚 Module: 21 | 🎓 Class: 4
 
-Non-Primitive Types
+# Non-Primitive Types in TypeScript
 
-«Topic: Array, Object & Tuple»
+> **Topic:** Array, Object & Tuple
 
 ---
 
-📖 What I Learned Today
+# 📖 What I Learned Today
 
-- What is Non-Primitive Type
-- What is Array
-- Array Syntax
-- Array Type in TypeScript
-- What is Object
-- Object Type in TypeScript
-- What is Tuple
-- Tuple Syntax
+- Non-Primitive Types
+- Array Type
+- Object Type
+- Tuple Type
 - Array vs Object vs Tuple
 - JavaScript vs TypeScript
+- Important Syntax
 - Common Mistakes
 - Quick Revision
+- Interview Questions
 
 ---
 
-Part 1 — Non-Primitive Types
+# 📌 What are Non-Primitive Types?
 
-📌 Definition
+### 🇺🇸 English
 
-🇺🇸 English
+Non-primitive types are used to **group multiple values together with structure**.
 
-Non-primitive types are used to group multiple values together with structure.
+### 🇧🇩 বাংলা
 
-🇧🇩 বাংলা
+Primitive types যেমন `number`, `string`, `boolean` সাধারণত single value represent করে। Non-primitive types ব্যবহার করে একাধিক value-কে structure অনুযায়ী group করা যায়।
 
-Primitive types যেমন "number", "string", "boolean" সাধারণত single value represent করে। Non-primitive types ব্যবহার করে একাধিক value-কে structure অনুযায়ী group করা যায়।
-
-Main Types
+### Main Types
 
 - Array
 - Object
@@ -43,69 +39,78 @@ Main Types
 
 ---
 
-Part 2 — Array
+# Part 1 — Array Type
 
-📌 Definition
+## 📌 Definition
 
-🇺🇸 English
+### 🇺🇸 English
 
-An Array is an ordered list of values that all share the same type.
+An ordered list of values that all share the same type.
 
-🇧🇩 বাংলা
+### 🇧🇩 বাংলা
 
-Array হলো এমন একটি ordered list যেখানে সাধারণত সব value একই type-এর হয়।
+Array হলো একটি ordered list যেখানে সাধারণত সব value একই type-এর হয়।
 
 ---
 
-Syntax
+# Syntax
 
+```ts
 let numbers: number[] = [10, 20, 30];
 
 let fruits: string[] = ["Apple", "Banana", "Orange"];
+```
 
 ---
 
-Important Points
+# Important Points
 
-- Array-এর elements সাধারণত একই type-এর হয়।
+- একই type-এর values রাখা হয়।
 - Array-এর length flexible।
-- Index "0" থেকে শুরু হয়।
+- Index `0` থেকে শুরু হয়।
 - Index ব্যবহার করে value access করা যায়।
 
+```ts
 numbers[0]; // 10
+```
 
 ---
 
-JavaScript vs TypeScript
+# JavaScript vs TypeScript
 
-JavaScript
+### JavaScript
 
+```js
 let numbers = [10, 20, 30];
+```
 
-TypeScript
+### TypeScript
 
+```ts
 let numbers: number[] = [10, 20, 30];
+```
 
-«TypeScript-এ "number[]" দিয়ে Array-এর element type নির্দিষ্ট করা যায়।»
-
----
-
-Part 3 — Object
-
-📌 Definition
-
-🇺🇸 English
-
-An Object is a structure that groups values under named keys.
-
-🇧🇩 বাংলা
-
-Object হলো এমন একটি structure যেখানে বিভিন্ন value-কে named key/property দিয়ে রাখা হয়।
+> TypeScript-এ `number[]` দিয়ে Array-এর element type নির্দিষ্ট করা যায়।
 
 ---
 
-Example
+# Part 2 — Object Type
 
+## 📌 Definition
+
+### 🇺🇸 English
+
+A structure that groups values under named keys.
+
+### 🇧🇩 বাংলা
+
+Object হলো এমন একটি structure যেখানে বিভিন্ন value-কে named key/property-এর মাধ্যমে রাখা হয়।
+
+---
+
+# Example
+
+```ts
 let student: {
     name: string;
     age: number;
@@ -115,31 +120,39 @@ let student: {
     age: 22,
     isStudent: true
 };
+```
 
 ---
 
-Structure
+# Object Structure
 
+```text
 key → property type → value
+```
 
+```text
 name      → string  → "Alice"
 age       → number  → 22
 isStudent → boolean → true
+```
 
 ---
 
-JavaScript vs TypeScript
+# JavaScript vs TypeScript
 
-JavaScript
+### JavaScript
 
+```js
 let student = {
     name: "Alice",
     age: 22,
     isStudent: true
 };
+```
 
-TypeScript
+### TypeScript
 
+```ts
 let student: {
     name: string;
     age: number;
@@ -149,69 +162,74 @@ let student: {
     age: 22,
     isStudent: true
 };
+```
 
-«TypeScript-এ Object-এর প্রতিটি property-এর type define করা যায়।»
-
----
-
-Part 4 — Tuple
-
-📌 Definition
-
-🇺🇸 English
-
-A Tuple is a fixed-length array where each position has its own type.
-
-🇧🇩 বাংলা
-
-Tuple দেখতে Array-এর মতো, কিন্তু প্রতিটি position-এর জন্য নির্দিষ্ট type থাকে এবং order ও length গুরুত্বপূর্ণ।
+> TypeScript-এ Object-এর প্রতিটি property-এর type define করা যায়।
 
 ---
 
-Example
+# Part 3 — Tuple Type
 
+## 📌 Definition
+
+### 🇺🇸 English
+
+A fixed-length array where each position has its own type.
+
+### 🇧🇩 বাংলা
+
+Tuple দেখতে Array-এর মতো, কিন্তু প্রতিটি position-এর জন্য নির্দিষ্ট type থাকে। এখানে **order এবং length গুরুত্বপূর্ণ**।
+
+---
+
+# Example
+
+```ts
 let user: [string, number] = ["Alice", 25];
+```
 
-এখানে:
-
+```text
 slot 0 → string → "Alice"
 slot 1 → number → 25
+```
 
 ---
 
-Important Points
+# Important Points
 
-- Fixed order
-- Fixed types
 - Fixed length
+- Fixed order
+- Fixed type for each position
 - প্রতিটি position-এর type আলাদা হতে পারে
-- ছোট fixed group of related values-এর জন্য useful
+- Small fixed groups of related values-এর জন্য useful
 
 ---
 
-Part 5 — Array vs Object vs Tuple
+# Part 4 — Array vs Object vs Tuple
 
-Feature| Array| Object| Tuple
-Structure| Ordered list| Key-value pairs| Fixed-length list
-Data Types| Usually one type| Mixed, per key| Mixed, per position
-Order| Flexible| Not guaranteed| Strict, matters
-Length| Flexible| Depends on properties| Fixed
-Best Use Case| Lists of similar items| Structured records| Small fixed groups
+| Feature | Array | Object | Tuple |
+|---|---|---|---|
+| Structure | Ordered list | Key-value pairs | Fixed-length list |
+| Data Types | Usually one type | Mixed, per key | Mixed, per position |
+| Order | Flexible | Not guaranteed | Strict, matters |
+| Length | Flexible | Depends on properties | Fixed |
+| Best Use Case | Lists of similar items | Structured records | Small fixed groups |
 
 ---
 
-Part 6 — Important Syntax
+# Part 5 — Important Syntax
 
-Array
+## Array
 
+```ts
 let numbers: number[] = [10, 20, 30];
 
 let fruits: string[] = ["Apple", "Banana", "Orange"];
+```
 
----
+## Object
 
-Object
-
+```ts
 let student: {
     name: string;
     age: number;
@@ -219,27 +237,42 @@ let student: {
     name: "Alice",
     age: 22
 };
+```
 
----
+## Tuple
 
-Tuple
-
+```ts
 let user: [string, number] = ["Alice", 25];
+```
 
 ---
 
-Part 7 — Common Mistakes
+# Part 6 — JavaScript vs TypeScript
 
-❌ Mistake 1 — Wrong Array Type
+| Feature | JavaScript | TypeScript |
+|---|---|---|
+| Array Type | Type is not explicitly declared | Type can be declared |
+| Object Properties | Type is not explicitly declared | Property types can be declared |
+| Tuple | No strict tuple type | Fixed types and order can be defined |
+| Type Checking | Runtime | Compile-time |
 
+---
+
+# Part 7 — Common Mistakes
+
+## ❌ Array
+
+```ts
 let numbers: number[] = [10, 20, "30"];
+```
 
-"number[]" হলে সব elements "number" হতে হবে।
+`number[]` হলে সব elements `number` হতে হবে।
 
 ---
 
-❌ Mistake 2 — Wrong Object Property Type
+## ❌ Object
 
+```ts
 let student: {
     name: string;
     age: number;
@@ -247,57 +280,82 @@ let student: {
     name: "Alice",
     age: "22"
 };
+```
 
-"age" অবশ্যই "number" হতে হবে।
+`age` অবশ্যই `number` হতে হবে।
 
 ---
 
-❌ Mistake 3 — Wrong Tuple Order
+## ❌ Tuple
 
+```ts
 let user: [string, number] = [25, "Alice"];
+```
 
-Tuple-এ order এবং type দুটোই match করতে হবে।
+Tuple-এ **order এবং type দুটোই match করতে হবে।**
 
 ---
 
-Part 8 — Quick Revision
+# ⚡ Quick Revision
 
-Array  → Ordered list → Usually same type → Flexible length
+```text
+Array
+→ Ordered List
+→ Usually Same Type
+→ Flexible Length
 
-Object → Key-value pairs → Different types allowed per key
+Object
+→ Key-Value Pairs
+→ Different Types per Key
 
-Tuple  → Fixed-length array → Fixed order + fixed type per position
+Tuple
+→ Fixed-Length Array
+→ Fixed Order
+→ Fixed Type per Position
+```
 
-Shortcut
+### 🧠 Memory Trick
 
-Array → Same Type
-
+```text
+Array  → Same Type
 Object → Named Keys
-
-Tuple → Fixed Order + Fixed Types
+Tuple  → Fixed Order + Fixed Types
+```
 
 ---
 
-Part 9 — Interview Questions
+# 🎯 Interview Questions
 
-Q1. What is the main difference between an Array and a Tuple in TypeScript?
+## Q1. What is the main difference between an Array and a Tuple in TypeScript?
 
-Answer:
-
+**Answer:**  
 Array সাধারণত একই type-এর multiple values রাখে এবং এর length flexible। Tuple-এর length, order এবং প্রতিটি position-এর type নির্দিষ্ট থাকে।
 
 ---
 
-Q2. Why is TypeScript Object typing useful?
+## Q2. Why is Object typing useful in TypeScript?
 
-Answer:
-
-Object-এর প্রতিটি property-এর expected type নির্দিষ্ট করা যায়, ফলে ভুল type-এর value দিলে TypeScript error detect করতে পারে।
+**Answer:**  
+Object-এর প্রতিটি property-এর expected type নির্দিষ্ট করা যায়। ফলে ভুল type-এর value দিলে TypeScript error detect করতে পারে।
 
 ---
 
-Q3. When should you use a Tuple instead of an Array?
+## Q3. When should you use a Tuple instead of an Array?
 
-Answer:
-
+**Answer:**  
 যখন ছোট একটি fixed group of values থাকে এবং প্রতিটি position-এর নির্দিষ্ট type ও order গুরুত্বপূর্ণ, তখন Tuple ব্যবহার করা হয়।
+
+---
+
+# 🔑 Keywords
+
+- Non-Primitive Types
+- Array
+- Object
+- Tuple
+- Type Annotation
+- Index
+- Key-Value Pair
+- Fixed Length
+- Fixed Order
+- Type Safety
