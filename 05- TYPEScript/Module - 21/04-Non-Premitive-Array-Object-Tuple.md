@@ -23,11 +23,8 @@
 
 # 📌 What are Non-Primitive Types?
 
-### 🇺🇸 English
 
 Non-primitive types are used to **group multiple values together with structure**.
-
-### 🇧🇩 বাংলা
 
 Primitive types যেমন `number`, `string`, `boolean` সাধারণত single value represent করে। Non-primitive types ব্যবহার করে একাধিক value-কে structure অনুযায়ী group করা যায়।
 
@@ -43,11 +40,8 @@ Primitive types যেমন `number`, `string`, `boolean` সাধারণত
 
 ## 📌 Definition
 
-### 🇺🇸 English
 
 An ordered list of values that all share the same type.
-
-### 🇧🇩 বাংলা
 
 Array হলো একটি ordered list যেখানে সাধারণত সব value একই type-এর হয়।
 
@@ -98,11 +92,8 @@ let numbers: number[] = [10, 20, 30];
 
 ## 📌 Definition
 
-### 🇺🇸 English
 
 A structure that groups values under named keys.
-
-### 🇧🇩 বাংলা
 
 Object হলো এমন একটি structure যেখানে বিভিন্ন value-কে named key/property-এর মাধ্যমে রাখা হয়।
 
@@ -172,11 +163,8 @@ let student: {
 
 ## 📌 Definition
 
-### 🇺🇸 English
 
 A fixed-length array where each position has its own type.
-
-### 🇧🇩 বাংলা
 
 Tuple দেখতে Array-এর মতো, কিন্তু প্রতিটি position-এর জন্য নির্দিষ্ট type থাকে। এখানে **order এবং length গুরুত্বপূর্ণ**।
 
